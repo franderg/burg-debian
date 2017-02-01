@@ -29,9 +29,12 @@ fi
 ##########################
 # Station configuration  #
 ##########################
-
 echo "Se agrega el repositorio de burg"
-sudo add-apt-repository "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main"
+
+#Se cambia porque da error
+#sudo add-apt-repository "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main"
+#echo "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main" > /etc/apt/sources.list.d/n-muench-burg-jessie.list
+echo "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main" | sudo tee --append /etc/apt/sources.list.d/n-muench-burg-jessie.list
 echo "Se realiza update"
 sudo apt-get update
 echo "Se instala burn"
@@ -41,3 +44,5 @@ sudo burg-install /dev/sda
 echo "Se actualiza burg"
 sudo update-burg
 echo "Se ha terminado con éxito, reinicie para ver cambios"
+
+
