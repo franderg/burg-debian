@@ -37,7 +37,7 @@ echo "Se agrega el repositorio de burg"
 echo "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main" | sudo tee --append /etc/apt/sources.list.d/n-muench-burg-jessie.list
 echo "Se realiza update"
 sudo apt-get update
-echo "Se instala burn"
+echo "Se instala burg"
 sudo apt-get install burg burg-common burg-emu burg-pc burg-themes burg-themes-common
 echo "Se agrega a la partición sda"
 sudo burg-install /dev/sda
