@@ -33,7 +33,6 @@ echo "Se agrega el repositorio de burg"
 
 #Se cambia porque da error
 #sudo add-apt-repository "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main"
-#echo "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main" > /etc/apt/sources.list.d/n-muench-burg-jessie.list
 echo "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main" | sudo tee --append /etc/apt/sources.list.d/n-muench-burg-jessie.list
 echo "Se realiza update"
 sudo apt-get update
