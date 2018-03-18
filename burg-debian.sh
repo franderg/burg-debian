@@ -6,6 +6,7 @@
 
 INSTALL='sudo install --owner=root --group=root --mode=644'
 
+VERSION_OS=(`echo $(lsb_release -c) | tr ':' ' '`)
 
 ##########################
 # Check permissions      #
@@ -31,17 +32,17 @@ fi
 ##########################
 echo "Se agrega el repositorio de burg"
 
-#Se cambia porque da error
-#sudo add-apt-repository "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main"
-echo "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main" | sudo tee --append /etc/apt/sources.list.d/n-muench-burg-jessie.list
-echo "Se realiza update"
+# Burg es un paquete para Ubuntu, la ultima distribución a la que se le dio soporte fue a Xenial
+# http://ppa.launchpad.net/n-muench/burg/ubuntu/dists/
+echo "deb http://ppa.launchpad.net/n-muench/burg/ubuntu/ xenial main" | sudo tee --append /etc/apt/sources.list.d/n-muench-burg-${VERSION_OS[1]}.list
+#echo "Se realiza update"
 sudo apt-get update
-echo "Se instala burg"
+#echo "Se instala burg"
 sudo apt-get install burg burg-common burg-emu burg-pc burg-themes burg-themes-common
-echo "Se agrega a la partición sda"
+#echo "Se agrega a la partición sda"
 sudo burg-install /dev/sda
-echo "Se actualiza burg"
+#echo "Se actualiza burg"
 sudo update-burg
-echo "Se ha terminado con éxito, reinicie para ver cambios"
+#echo "Se ha terminado con éxito, reinicie para ver cambios"
 
 
