@@ -1,9 +1,9 @@
 # burg-debian
 Install burg in debian
 
-Este programa agrega los repositorios necesarios para utilizar burg, instala y configura burg.
+This program provides the necessary to use, install and configure burg in Debian, this program works for version 7 of Debian.
 
-Pasos de instalación.
+Steps of use:
 
 sudo chmod +x burg-debian.sh
 
